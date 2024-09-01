@@ -23,7 +23,6 @@ header {
     box-sizing: border-box;
     text-align: center;
     color: #fff; /* 白文字 */
-    overflow: hidden; /* 内容がはみ出ないようにする */
 }
 
 .restaurant-name {
@@ -65,53 +64,48 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
+/* mainセクションのパディングを調整して固定バーと被らないようにする */
 main {
-    margin-top: 80px; /* Adjust based on header height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 80px; /* 固定バーの高さに合わせて調整 */
+    box-sizing: border-box;
 }
 
 section {
-    padding: 40px 20px; /* 調整されたパディング */
-    text-align: center;
-    max-width: 1200px;
-    margin: 20px auto; /* 均等なマージン */
-    background-color: #fff; /* 白背景 */
-    border: 1px solid #ddd; /* 薄いグレーのボーダー */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
 }
 
-section img {
-    max-width: 100%;
-    height: auto;
+section:target {
+    padding-top: 120px; /* 固定バーの高さ分だけ上部に余白を追加 */
 }
 
 .menu-table, .info-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0 auto; /* 中央寄せ */
+    margin: 20px 0;
 }
 
-.menu-table th, .info-table th, .menu-table td, .info-table td {
-    border: 1px solid #ddd; /* 薄いグレーのボーダー */
-    padding: 10px;
+.menu-table th, .info-table th,
+.menu-table td, .info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
 }
 
 .menu-table th, .info-table th {
-    background-color: #f39c12; /* 金色っぽい色 */
-    color: #333; /* 文字色 */
-    font-weight: bold;
+    background-color: #e74c3c; /* 薄めの赤 */
+    color: #fff; /* 白文字 */
 }
 
 footer {
-    padding: 20px;
     background-color: #e74c3c; /* 薄めの赤 */
     color: #fff; /* 白文字 */
     text-align: center;
-    border-top: 1px solid #c0392b; /* 上部ボーダー */
+    padding: 20px;
+}
+
+footer h2 {
+    margin-top: 0;
 }
 
 footer ul {
@@ -122,24 +116,16 @@ footer ul {
 
 footer ul li {
     display: inline;
-    margin: 0 10px; /* 均等なマージン */
+    margin: 0 10px;
 }
 
 footer ul li a {
     text-decoration: none;
     color: #fff; /* 白文字 */
+    font-weight: bold;
 }
 
 footer ul li a:hover {
-    text-decoration: underline;
-}
-
-a {
-    color: #e74c3c; /* 薄めの赤 */
-    text-decoration: none;
-}
-
-a:hover {
     text-decoration: underline;
 }
 
