@@ -1,10 +1,8 @@
-
 /* スクロールを滑らかにするためのスタイル */
 html {
     scroll-behavior: smooth;
 }
 
-/* 他のスタイル設定はそのまま */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -25,12 +23,16 @@ header {
     box-sizing: border-box;
     text-align: center;
     color: #fff; /* 白文字 */
+    overflow: hidden; /* 内容がはみ出ないようにする */
 }
 
 .restaurant-name {
-    font-size: 28px; /* 大きめに設定 */
+    font-size: 24px; /* 調整されたフォントサイズ */
     font-weight: bold;
     margin-bottom: 10px;
+    white-space: nowrap; /* テキストを1行に保つ */
+    overflow: hidden; /* はみ出た部分を隠す */
+    text-overflow: ellipsis; /* はみ出た部分に「...」を表示 */
 }
 
 nav ul {
@@ -39,10 +41,11 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* アイテムを折り返す */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px; /* スペースを調整 */
 }
 
 nav ul li a {
@@ -51,6 +54,10 @@ nav ul li a {
     padding: 10px 15px;
     display: block;
     font-weight: bold;
+    font-size: 14px; /* 調整されたフォントサイズ */
+    white-space: nowrap; /* テキストを1行に保つ */
+    overflow: hidden; /* はみ出た部分を隠す */
+    text-overflow: ellipsis; /* はみ出た部分に「...」を表示 */
 }
 
 nav ul li a:hover {
@@ -135,3 +142,4 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
