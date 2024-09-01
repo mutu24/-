@@ -41,6 +41,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: nowrap; /* 折り返さないようにする */
 }
 
 nav ul li {
@@ -120,5 +121,29 @@ footer ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+}
+
+/* モバイルデバイス向けのスタイル */
+@media (max-width: 768px) {
+    header {
+        padding: 5px 0; /* 上下のパディングを減らす */
+    }
+
+    .header-content h1 {
+        font-size: 20px; /* フォントサイズを小さくする */
+    }
+
+    nav ul {
+        flex-wrap: nowrap; /* 折り返さないようにする */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* 横のマージンを調整 */
+    }
+
+    nav ul li a {
+        padding: 5px 10px; /* パディングを減らす */
+        font-size: 14px; /* フォントサイズを小さくする */
+    }
 }
 
