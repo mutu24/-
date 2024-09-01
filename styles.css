@@ -68,40 +68,58 @@ nav ul li a:hover {
 main {
     padding-top: 80px; /* 固定バーの高さに合わせて調整 */
     box-sizing: border-box;
+    max-width: 1200px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央寄せ */
 }
 
 section {
     padding: 20px;
-    margin: 20px;
+    margin: 20px 0;
 }
 
+/* スクロール対象のセクションに対してパディングを追加 */
 section:target {
     padding-top: 120px; /* 固定バーの高さ分だけ上部に余白を追加 */
 }
 
-.menu-table, .info-table {
+/* メニューのテーブルスタイル */
+.menu-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    text-align: left; /* 左寄せ */
 }
 
-.menu-table th, .info-table th,
-.menu-table td, .info-table td {
+.menu-table th, .menu-table td {
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    padding: 10px;
 }
 
-.menu-table th, .info-table th {
+.menu-table th {
     background-color: #e74c3c; /* 薄めの赤 */
     color: #fff; /* 白文字 */
+    text-align: left; /* 左寄せ */
 }
 
+.menu-table td {
+    background-color: #fff; /* 白背景 */
+}
+
+.menu-table .item-name {
+    font-weight: bold;
+}
+
+.menu-table .item-price {
+    text-align: right; /* 価格を右揃え */
+}
+
+/* フッターのスタイル */
 footer {
     background-color: #e74c3c; /* 薄めの赤 */
     color: #fff; /* 白文字 */
     text-align: center;
     padding: 20px;
+    border-top: 2px solid #c0392b; /* 上部の赤い境界線 */
 }
 
 footer h2 {
@@ -116,16 +134,15 @@ footer ul {
 
 footer ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 10px; /* スペースを調整 */
 }
 
 footer ul li a {
     text-decoration: none;
     color: #fff; /* 白文字 */
-    font-weight: bold;
+    font-size: 18px; /* フォントサイズ調整 */
 }
 
 footer ul li a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* ホバー時の下線 */
 }
-
