@@ -1,3 +1,10 @@
+
+/* スクロールを滑らかにするためのスタイル */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 他のスタイル設定はそのまま */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
