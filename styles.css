@@ -1,37 +1,38 @@
-/* スクロールを滑らかにするためのスタイル */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f5f5f5; /* 軽いグレー背景 */
+    background-color: #fff;
+    scroll-behavior: smooth; /* 滑らかスクロール */
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #e74c3c; /* 薄めの赤 */
-    border-bottom: 2px solid #c0392b; /* 少し深めの赤 */
+    background-color: rgba(255, 255, 255, 0.8); /* 透明度を調整 */
+    border-bottom: 2px solid #e0e0e0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    box-sizing: border-box;
-    text-align: center;
-    color: #fff; /* 白文字 */
+    backdrop-filter: blur(10px); /* 背景をぼかす */
 }
 
-.restaurant-name {
-    font-size: 24px; /* 調整されたフォントサイズ */
-    font-weight: bold;
-    margin: 0; /* マージンをリセット */
-    white-space: nowrap; /* テキストを1行に保つ */
-    overflow: hidden; /* はみ出た部分を隠す */
-    text-overflow: ellipsis; /* はみ出た部分に「...」を表示 */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+nav {
+    margin-top: 10px;
 }
 
 nav ul {
@@ -40,94 +41,68 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* アイテムを折り返す */
 }
 
 nav ul li {
-    margin: 0 10px; /* スペースを調整 */
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* 白文字 */
+    color: #333;
     padding: 10px 15px;
     display: block;
     font-weight: bold;
-    font-size: 14px; /* 調整されたフォントサイズ */
-    white-space: nowrap; /* テキストを1行に保つ */
-    overflow: hidden; /* はみ出た部分を隠す */
-    text-overflow: ellipsis; /* はみ出た部分に「...」を表示 */
 }
 
 nav ul li a:hover {
-    background-color: #c0392b; /* ホバー時の背景色 */
+    background-color: #f0f0f0;
     border-radius: 4px;
 }
 
-/* mainセクションのパディングを調整して固定バーと被らないようにする */
 main {
-    padding-top: 80px; /* 固定バーの高さに合わせて調整 */
-    box-sizing: border-box;
-    max-width: 1200px; /* 最大幅を設定 */
-    margin: 0 auto; /* 中央寄せ */
+    margin-top: 70px; /* Adjusted to account for header height */
 }
 
 section {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff; /* 背景色を白に設定 */
-    border: 1px solid #ddd; /* 薄い灰色の枠線 */
-    border-radius: 8px; /* 角を丸くする */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽いシャドウ */
-}
-
-/* スクロール対象のセクションに対してパディングを追加 */
-section:target {
-    padding-top: 120px; /* 固定バーの高さ分だけ上部に余白を追加 */
-}
-
-/* メニューのテーブルスタイル */
-.menu-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    text-align: left; /* 左寄せ */
-}
-
-.menu-table th, .menu-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.menu-table th {
-    background-color: #e74c3c; /* 薄めの赤 */
-    color: #fff; /* 白文字 */
-    text-align: left; /* 左寄せ */
-}
-
-.menu-table td {
-    background-color: #fff; /* 白背景 */
-}
-
-.menu-table .item-name {
-    font-weight: bold;
-}
-
-.menu-table .item-price {
-    text-align: right; /* 価格を右揃え */
-}
-
-/* フッターのスタイル */
-footer {
-    background-color: #e74c3c; /* 薄めの赤 */
-    color: #fff; /* 白文字 */
+    padding: 60px 20px;
     text-align: center;
+    max-width: 1200px; /* Ensure max-width to center align content */
+    margin-left: auto;
+    margin-right: auto;
+    scroll-margin-top: 70px; /* Adjust for fixed bar height */
+}
+
+section img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-item, .menu-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
-    border-top: 2px solid #c0392b; /* 上部の赤い境界線 */
+    margin-top: 20px;
+    text-align: left; /* Align text to the left for better readability */
+    max-width: 800px; /* Center alignment */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
 }
 
 footer h2 {
-    margin-top: 0;
+    margin: 0 0 20px;
+    font-size: 24px;
 }
 
 footer ul {
@@ -138,16 +113,12 @@ footer ul {
 
 footer ul li {
     display: inline;
-    margin: 0 10px; /* スペースを調整 */
+    margin: 0 15px;
 }
 
 footer ul li a {
     text-decoration: none;
-    color: #fff; /* 白文字 */
-    font-size: 18px; /* フォントサイズ調整 */
-}
-
-footer ul li a:hover {
-    text-decoration: underline; /* ホバー時の下線 */
+    color: #333;
+    font-weight: bold;
 }
 
